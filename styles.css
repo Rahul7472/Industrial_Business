@@ -82,17 +82,20 @@ body {
 
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("assets/header.jpg");
+    url("assets/header-bg.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 
 nav {
   position: fixed;
   isolation: isolate;
   width: 100%;
   z-index: 9;
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav__header {
@@ -101,7 +104,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--primary-color);
+  background-color: transparent;
+}
+
+.nav__logo {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .nav__logo a {
@@ -109,11 +117,20 @@ nav {
   font-weight: 500;
   font-style: italic;
   color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  width: 110px;
+  max-width: 150px;
+  height: auto;
+  display: block;
 }
 
 .nav__menu__btn {
   font-size: 1.5rem;
-  color: var(--white);
+  color: var(--text-dark);
   cursor: pointer;
 }
 
@@ -222,17 +239,17 @@ nav {
 
 .about__card:nth-child(1) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("assets/about-1.jpg");
+    url("assets/car1.png");
 }
 
 .about__card:nth-child(2) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("assets/about-2.jpg");
+    url("assets/car2.png");
 }
 
 .about__card:nth-child(3) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("assets/about-3.jpg");
+    url("assets/car3.png");
 }
 
 .about__card p {
@@ -520,9 +537,8 @@ nav {
 @media (width > 768px) {
   nav {
     position: static;
-    padding: 2rem 1rem;
-    max-width: var(--max-width);
-    margin-inline: auto;
+    width: 100%;
+    padding-inline: max(1rem, calc((100% - var(--max-width)) / 2 + 1rem));
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -556,7 +572,7 @@ nav {
   }
 
   .nav__links a {
-    color: var(--white);
+    color: var(--text-dark);
   }
 
   .nav__btns {
@@ -565,8 +581,8 @@ nav {
   }
 
   .nav__btns .btn {
-    color: var(--primary-color);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--primary-color);
   }
 
   .header__container {
@@ -611,4 +627,74 @@ nav {
   .article__grid {
     gap: 2rem;
   }
+}
+
+/* Legal Pages */
+.legal__section {
+  padding-top: 12rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  background-color: var(--extra-light);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/IT3.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.legal__section .section__header {
+  color: var(--primary-color);
+}
+
+.legal__icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.legal__icon i {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.legal__content {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem 1.5rem;
+}
+
+.legal__content h2 {
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.legal__content p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.legal__content ul {
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.legal__content ul li {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  list-style: none;
 }
